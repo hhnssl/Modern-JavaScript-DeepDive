@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li id="apple">Apple</li>
+    <li id="banana">Banana</li>
+    <li id="orange">Orange</li>
+  </ul>
+
+  <script>
+    // 모든 li 요소를 선택하여 HTMLCollection 객체(유사배열 형태)로 elem에 담는다.
+    const elem = document.getElementsByTagName('li');
+
+    // HTMLCollection인 객체를 배열로 변환하여 순환한다.
+    [...elem].forEach(elem => { elem.style.color = 'pink'; });
+  </script>
+</body>
+
+</html>

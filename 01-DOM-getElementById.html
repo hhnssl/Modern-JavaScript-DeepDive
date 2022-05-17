@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li id="banana">Apple</li>
+    <li id="banana">Banana</li>
+    <li id="banana">Orange</li>
+  </ul>
+
+  <script>
+    // getElementById는 id가 오직 하나만 존재한다고 여기기 때문에 제일 첫번째로 id 값을 가지고 있는 노드 요소만을 가리킨다.
+    const elem = document.getElementById('banana');
+
+    elem.style.color = 'red';
+  </script>
+</body>
+
+</html>
