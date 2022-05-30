@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 모던 자바스크립트 예제
+    // async function f() {
+    //   return 100;
+    // }
+
+    // f().then(alert); // 100
+
+
+
+    // 모던 자바스크립트 예제 (살짝 수정)
+    async function f() {
+      return 100;
+    }
+
+    f().then(function (result) { // (**)
+
+      alert(result); // 100
+      return result * 2;
+
+    }).then(function (result) { // (***)
+
+      alert(result); // 200
+      return result * 2;
+
+    }).then(function (result) {
+
+      alert(result); // 400
+      return result * 2;
+
+    });
+  </script>
+</body>
+
+</html>

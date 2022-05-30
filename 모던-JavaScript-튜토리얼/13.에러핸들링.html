@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function loadScript(src, callback) {
+      let script = document.createElement('script');
+      script.src = src;
+
+      script.onload = () => callback(null, script);
+      script.onerror = () => callback(new Error(`${src}를 불러오는 도중에 에러가 발생했습니다.`));
+
+      document.head.append(script);
+    }
+
+    // 에러를 의도적으로 발생시키려면 src에 이상한 주소 넣으면 됨
+    loadScript('./my/script.js', function (error, script) {
+      if (error) {
+        // 에러 처리
+        console.log('꺅 에러다');
+      } else {
+        // 스크립트 로딩이 성공적으로 끝남
+        console.log('꺅 성공이다');
+        console.log(script);
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const f = fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+    //   .then(function (response) {
+    //     return response.json();
+    //   })
+    //   .then(function (json) {
+    //     console.log(json);
+    //     return json
+    //   })
+    // console.log(f); // 나중에 출력
+    // console.log(1);
+    // console.log(2);
+
+
+    // fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+    //   .then(function (response) {
+    //     console.log(1);
+    //     return response.json();
+    //   })
+    //   .then(function (json) {
+    //     console.log(2);
+    //     console.log(json);
+    //     return json
+    //   })
+    //   .then(function (json) {
+    //     console.log(3);
+    //     console.log(json.filter(s => s['시·도별(1)'] === '전국'));
+    //     return
+    //   })
+
+    // 1차 접종 퍼센트를 구해주세요!
+    // fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+    //   .then(function (response) {
+    //     console.log(1);
+    //     return response.json();
+    //   })
+    //   .then(function (json) {
+    //     console.log(2);
+    //     console.log(json);
+    //     return json
+    //   })
+    //   .then(function (json) {
+    //     console.log(3);
+    //     console.log(json.filter(s => s['시·도별(1)'] === '전국').map(obj => obj['1차 접종 퍼센트']));
+    //     return
+    //   })
+
+
+    fetch('https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json')
+      .then(function (response) {
+        console.log(1);
+        throw Error('애러났어유!')
+        return response.json();
+      })
+      .then(function (json) {
+        console.log(2);
+        console.log(json);
+        return json
+      })
+      .then(function (json) {
+        console.log(3);
+        console.log(json.filter(s => s['시·도별(1)'] === '전국'));
+        return
+      })
+      .catch(err => alert(err))
+  </script>
+</body>
+
+</html>

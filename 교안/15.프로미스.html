@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 모던자바스크립트 예제
+    let promise = new Promise(function (resolve, reject) {
+      setTimeout(() => resolve(1), 1000);
+    });
+
+    promise.then(function (result) {
+      alert(result); // 1
+      return result * 2;
+    });
+
+    promise.then(function (result) {
+      alert(result); // 1
+      return result * 2;
+    });
+
+    promise.then(function (result) {
+      alert(result); // 1
+      return result * 2;
+    });
+  </script>
+</body>
+
+</html>

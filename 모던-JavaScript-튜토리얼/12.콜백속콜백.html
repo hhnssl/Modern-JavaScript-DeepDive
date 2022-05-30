@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function loadScript(src, callback) {
+      let script = document.createElement('script');
+      script.src = src;
+      script.onload = () => callback(script);
+      document.head.append(script);
+    }
+
+
+    loadScript('./my/script.js', function (script) {
+
+      alert(`${script.src}을 로딩했습니다. 이젠, 다음 스크립트를 로딩합시다.`);
+
+      loadScript('./my/script2.js', function (script) {
+        alert(`두 번째 스크립트를 성공적으로 로딩했습니다.`);
+
+        loadScript('./my/script3.js', function (script) {
+          alert(`세 번째 스크립트를 성공적으로 로딩했습니다.`);
+        });
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>

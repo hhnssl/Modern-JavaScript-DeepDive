@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function loadScript(src, callback) {
+      let script = document.createElement('script');
+      script.src = src;
+
+      script.onload = () => callback(null, script);
+      script.onerror = () => callback(new Error(`${src}를 불러오는 도중에 에러가 발생했습니다.`));
+
+      document.head.append(script);
+    }
+
+
+    loadScript('./my/script.js', function (error, script) {
+
+      if (error) {
+        handleError(error);
+      } else {
+        // ...
+        loadScript('./my/script2.js', function (error, script) {
+          if (error) {
+            handleError(error);
+          } else {
+            // ...
+            loadScript('./my/script3.js', function (error, script) {
+              if (error) {
+                handleError(error);
+              } else {
+                // 모든 스크립트가 로딩된 후, 실행 흐름이 이어집니다. (*)
+              }
+            });
+
+          }
+        })
+      }
+    });
+  </script>
+</body>
+
+</html>

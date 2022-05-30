@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function one() { console.log('원실행'); two(); }
+    // function two() { console.log('투실행'); three(); }
+    // function three() { console.log('쓰리실행'); console.log('end'); }
+
+    // three()
+    // two()
+    // one()
+    // // anonymous // 가상 전역 컨텍스트, 이것도 마지막에 빠짐
+
+    console.log(1);
+    setTimeout(function () {
+      console.log(2);
+    }, 1000) // setTimeout(()=> console.log(2), 1000)
+    console.log(3);
+  </script>
+</body>
+
+</html>

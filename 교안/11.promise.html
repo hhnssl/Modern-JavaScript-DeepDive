@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- promise: 콜백함수야 나중에 다시 부를게!!! -->
+  <script>
+    // resolve(value) — 작업이 성공적으로 마무리되면 호출, 결과는 value에 담김
+    // reject(error) — 작업이 실패시 호출, error는 error에 담김
+
+    // 쉬운 예제
+    // let p = new Promise(function (resolve, reject) {
+    //   resolve('hello world');
+    // }).then(메시지 => {
+    //   alert(메시지);
+    //   return 메시지.split(' ')[0]
+    // }).then(메시지 => {
+    //   alert(메시지);
+    //   return 메시지[0]
+    // }).then(메시지 => {
+    //   alert(메시지);
+    // });
+
+    // let p = new Promise(function (resolve, reject) {
+    //   // resolve('hello world');
+    //   reject('hello world');
+    // }).then(메시지 => {
+    //   alert(메시지);
+    //   return 메시지.split(' ')[0]
+    // }).then(메시지 => {
+    //   alert(메시지);
+    //   return 메시지[0]
+    // }).then(메시지 => {
+    //   alert(메시지);
+    // }).catch(메시지 => {
+    //   alert('catch 실행!! :' + 메시지);
+    // });
+
+    // let p = new Promise(function (resolve, reject) {
+    //   // resolve('hello world');
+    //   reject('hello world');
+    // }).then(메시지 => {
+    //   alert(메시지);
+    //   throw Error("에러 발생!")
+    //   return 메시지.split(' ')[0]
+    // }).then(메시지 => {
+    //   alert(메시지);
+    //   return 메시지[0]
+    // }).then(메시지 => {
+    //   alert(메시지);
+    // }).catch(메시지 => {
+    //   alert('catch 실행!! :' + 메시지);
+    // });
+
+    let p = new Promise(function (resolve, reject) {
+      // resolve('hello world');
+      // reject('hello world');
+      resolve('hello world');
+    }).then(메시지 => {
+      alert(메시지);
+      throw Error("에러 발생!")
+      return 메시지.split(' ')[0]
+    }).then(메시지 => {
+      alert(메시지);
+      return 메시지[0]
+    }).then(메시지 => {
+      alert(메시지);
+    }).catch(메시지 => {
+      alert('catch 실행!! :' + 메시지);
+    });
+  </script>
+</body>
+
+</html>
